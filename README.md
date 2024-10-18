@@ -33,16 +33,16 @@ To run this project locally, follow these simple steps:
     ```
     cd TFI
     ```
-- Install dependencies:
+3. Install dependencies:
     ```
     pip install flask
     ```
-- Run the app:
+4. Run the app:
 
     ```
     python app.py
     ```
-- Open your browser and go to http://127.0.0.1:5000 to see your fake riches grow!
+5. Open your browser and go to http://127.0.0.1:5000 to see your fake riches grow!
 
 ---
 ## Usage:
