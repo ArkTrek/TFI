@@ -45,4 +45,20 @@ To run this project locally, follow these simple steps:
 - Open your browser and go to http://127.0.0.1:5000 to see your fake riches grow!
 
 ---
-##
+## Usage:
+Once you've started the Flask app, the dashboard will automatically begin simulating:
+
+- Total Earnings: Increments by a random value every 2 seconds.
+- Reward Earnings: Follows a smaller incremental pattern.
+- Tasks Completed: Incremented by 1 with each earning update.
+- Payouts: Automatically synced with total earnings to provide realistic payout values.
+Just sit back and watch your imaginary bank account fill up!
+
+--- 
+
+## Technologies Used:
+- Flask: Backend framework to serve the dashboard.
+- JavaScript: Handles real-time updates and smooth transitions.
+- HTML & CSS: Provides the structure and styling for the UI.
+- PayPal Logo: Directly sourced from PayPal to add that extra bit of realism!
+
