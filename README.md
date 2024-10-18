@@ -65,39 +65,39 @@ Just sit back and watch your imaginary bank account fill up!
 ---
 
 ## Customization
-     ### Adjust Increment Speed:
-     Want to increase or decrease how fast your fake earnings grow? Modify the setInterval function in the JavaScript code:
-     ```
+### Adjust Increment Speed:
+   Want to increase or decrease how fast your fake earnings grow? Modify the setInterval function in the JavaScript code:
+   ```
         setInterval(updateEarnings, 2000);  // Updates every 2 seconds
-     ```
+   ```
     
-    ---
+   ---
     
-     ### Change Increment Amounts
-     To earn faster, you can modify the random increment values for earnings:
-     ```
+   ### Change Increment Amounts
+   To earn faster, you can modify the random increment values for earnings:
+   ```
         let newTotalEarnings = totalEarnings + (Math.random() * 1);
         let newRewardEarnings = rewardEarnings + (Math.random() * 0.2);
-     ```
+   ```
     
-    ---
+   ---
     
-    ### Replace the PayPal Logo
-        If you prefer another payment provider logo (or your own fictional one), just replace the PayPal image URL:
-        ```
+   ### Replace the PayPal Logo
+   If you prefer another payment provider logo (or your own fictional one), just replace the PayPal image URL:
+   ```
             <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" class="paypal-logo">
-        ```
+   ```
         
-        --- 
+   --- 
     
-    ### Contributing
-    Feel free to submit issues or pull requests to make TFI - The Fun Incrementer even more fun! 🎉 Contributions are always welcome, and you can:
+   ### Contributing
+   Feel free to submit issues or pull requests to make TFI - The Fun Incrementer even more fun! 🎉 Contributions are always welcome, and you can:
     
-    - Add new features like custom earning types.
-    - Improve the UI to make it even more engaging.
-    - Create new animations for earning updates.
+   - Add new features like custom earning types.
+   - Improve the UI to make it even more engaging.
+   - Create new animations for earning updates.
     
-    ---
+   ---
     
-    ### License
-    This project is licensed under the MIT License. Enjoy it, modify it, and share it—just don't take the numbers too seriously! 😄
+   ### License
+   This project is licensed under the MIT License. Enjoy it, modify it, and share it—just don't take the numbers too seriously! 😄
