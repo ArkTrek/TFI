@@ -24,25 +24,25 @@ All values increase smoothly with small random increments, simulating the look a
 ## Installation
 To run this project locally, follow these simple steps:
 
--- Clone the repository:
+- Clone the repository:
     ```
     git clone github.com/arktrek/TFI.git
     ```
--- Navigate to the project directory:
+- Navigate to the project directory:
 
     ```
     cd TFI
     ```
--- Install dependencies:
+- Install dependencies:
     ```
     pip install flask
     ```
--- Run the app:
+- Run the app:
 
     ```
     python app.py
     ```
--- Open your browser and go to http://127.0.0.1:5000 to see your fake riches grow!
+- Open your browser and go to http://127.0.0.1:5000 to see your fake riches grow!
 
 ---
 ##
