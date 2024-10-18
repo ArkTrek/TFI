@@ -24,11 +24,11 @@ All values increase smoothly with small random increments, simulating the look a
 ## Installation
 To run this project locally, follow these simple steps:
 
-- Clone the repository:
+1. Clone the repository:
     ```
     git clone github.com/arktrek/TFI.git
     ```
-- Navigate to the project directory:
+2. Navigate to the project directory:
 
     ```
     cd TFI
