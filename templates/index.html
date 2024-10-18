@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Earnings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .earnings-overview {
+            display: flex;
+            justify-content: space-between;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h2 {
+            margin: 0;
+            font-size: 20px;
+            color: #666;
+        }
+        .card .amount {
+            font-size: 36px;
+            color: #333;
+            margin: 10px 0;
+            transition: color 0.5s ease;
+        }
+        .amount-subtext {
+            font-size: 14px;
+            color: #8fbc8f;
+        }
+        .past-earnings {
+            margin-top: 30px;
+        }
+        .important-info {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #f0f0f0;
+        }
+        .pending {
+            color: #ff7f50;
+        }
+        .paypal-logo {
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Earnings</h1>
+        <p>Payments happen weekly on Tuesdays.</p>
+        
+        <!-- Earnings Overview -->
+        <div class="earnings-overview">
+            <div class="card">
+                <h2>Total Earnings</h2>
+                <div class="amount" id="total-earnings">$0.00</div>
+                <div class="amount-subtext" id="this-pay-period">$0.00 this pay period</div>
+            </div>
+            <div class="card">
+                <h2>Reward Earnings</h2>
+                <div class="amount" id="reward-earnings">$0.00</div>
+                <div class="amount-subtext" id="reward-pay-period">$0.00 this pay period</div>
+            </div>
+        </div>
+
+        <!-- Past Earnings -->
+        <div class="past-earnings">
+            <h2>Past Earnings</h2>
+            <div class="important-info">
+                <ul>
+                    <li>Payments are processed weekly on Tuesday evening Pacific Time.</li>
+                    <li>PayPal payouts typically deposited by Wednesday 11:59 PM PT.</li>
+                    <li>Bank transfers take 3-5 days to arrive.</li>
+                    <li>Failed payments retry next day and every Friday for 5 weeks.</li>
+                </ul>
+            </div>
+            
+            <!-- Earnings Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pay Period</th>
+                        <th>Tasks Completed</th>
+                        <th>Payout</th>
+                        <th>Payment Account</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Current Earnings</td>
+                        <td id="tasks-completed">2 tasks</td>
+                        <td id="payout-amount">$1.25</td>
+                        <td><img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" class="paypal-logo"></td>
+                        <td><span class="pending">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Variables for total earnings, reward earnings, tasks completed, and payout
+        let totalEarnings = 0;
+        let rewardEarnings = 0;
+        let tasksCompleted = 2;
+        let payoutAmount = 1.25;  // Initial payout amount
+
+        // Smooth transition for number increment using a step-based increase
+        function incrementEarnings(startValue, endValue, element, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.textContent = `$${(startValue + (endValue - startValue) * progress).toFixed(2)}`;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Smooth transition for task increment
+        function incrementTasks(startValue, endValue, element, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.textContent = `${Math.floor(startValue + (endValue - startValue) * progress)} tasks`;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Smooth transition for payout increment based on total earnings
+        function incrementPayout(startValue, endValue, element, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.textContent = `$${(startValue + (endValue - startValue) * progress).toFixed(2)}`;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Function to simulate earnings, tasks, and payout increase over time
+        function updateEarnings() {
+            let newTotalEarnings = totalEarnings + (Math.random() * 1);  // Random increment for total earnings
+            let newRewardEarnings = rewardEarnings + (Math.random() * 0.2);  // Random increment for reward earnings
+            let newTasksCompleted = tasksCompleted + 1;  // Increment tasks completed by 1
+            let newPayoutAmount = newTotalEarnings;  // Payout amount equals the total earnings
+
+            // Update the earnings values smoothly over 1 second
+            incrementEarnings(totalEarnings, newTotalEarnings, document.getElementById('total-earnings'), 1000);
+            incrementEarnings(rewardEarnings, newRewardEarnings, document.getElementById('reward-earnings'), 1000);
+            
+            // Update the tasks completed smoothly over 1 second
+            incrementTasks(tasksCompleted, newTasksCompleted, document.getElementById('tasks-completed'), 1000);
+
+            // Update the payout value smoothly over 1 second based on total earnings
+            incrementPayout(payoutAmount, newPayoutAmount, document.getElementById('payout-amount'), 1000);
+
+            // Update the pay period text
+            document.getElementById('this-pay-period').textContent = `$${newTotalEarnings.toFixed(2)} this pay period`;
+            document.getElementById('reward-pay-period').textContent = `$${newRewardEarnings.toFixed(2)} this pay period`;
+
+            // Update the actual values
+            totalEarnings = newTotalEarnings;
+            rewardEarnings = newRewardEarnings;
+            tasksCompleted = newTasksCompleted;
+            payoutAmount = newPayoutAmount;
+        }
+
+        // Trigger earnings, tasks, and payout update every 2 seconds
+        setInterval(updateEarnings, 2000);
+    </script>
+</body>
+</html>
