@@ -100,4 +100,4 @@ Just sit back and watch your imaginary bank account fill up!
    ---
     
    ### License
-   This project is licensed under the MIT License. Enjoy it, modify it, and share it—just don't take the numbers too seriously! 😄
+   This project is licensed under the GNU General Public License. Enjoy it, modify it, and share it—just don't take the numbers too seriously! 😄
